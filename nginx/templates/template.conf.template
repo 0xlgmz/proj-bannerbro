@@ -1,0 +1,19 @@
+server {
+
+    # SSL configuration
+
+#    listen 443 ssl;
+#    listen [::]:443;
+    listen 80;
+    listen [::]:80;
+
+#    ssl_certificate /etc/ssl/sslbundle.crt;
+#    ssl_certificate_key /etc/ssl/sslbundle.key;
+
+    server_name localhost _ ;
+    client_max_body_size 100M;
+
+    location / {
+        proxy_pass http://localhost:3000;
+    }
+}

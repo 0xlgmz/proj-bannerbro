@@ -1,0 +1,45 @@
+<div style="margin-top: 16px;"></div>
+<footer class="footer navbar-light bg-dark text-center text-white" style="border-top: 2px solid gray; padding-top: 20px;">
+  <div class="container">
+    <div class="row justify-content-between" style="padding-top: 20px;">
+      <div class="col-6 col-md-2 mb-3">
+        <h4>Quick Links</h4>
+        <ul class="nav flex-column text-white">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Links Here</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-2 mb-3">
+        <h4>About Tool</h4>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Links Here</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-2 mb-3">
+        <h4>Helpful Links</h4>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Links Here</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-md-2 mb-3">
+        <h4>Support</h4>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Links Here</a></li>
+        </ul>
+      </div>
+
+    <div class="d-flex flex-column flex-sm-row justify-content-between pt-4 pb-2 my-4 border-top">
+      <p>Ⓒ Year Company Name.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Import of banner notifications -->
+<script src="https://unpkg.com/notie"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</body>
+</html>

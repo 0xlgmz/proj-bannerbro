@@ -1,0 +1,71 @@
+networks:
+  template_compose:
+    ipam:
+      config:
+        - subnet: "172.16.0.0/16"
+          gateway: "172.16.0.254"
+    driver: bridge
+    name: network_template_compose
+
+services:
+
+  web:
+    container_name: fullstack_template_compose
+    env_file:
+      - .env
+    build:
+      .
+    depends_on:
+      - db
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./application:/usr/src/app
+      - ./application/public:/usr/src/app/public
+    command: air ./cmd/main.go -b 0.0.0.0
+    links:
+      - db
+    networks:
+      template_compose:
+        ipv4_address: 172.16.0.1
+
+  db:
+    container_name: db_template_compose
+    image: postgres:alpine
+    env_file:
+      - .env
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWD}
+      - POSTGRES_DB=${DB_NAME}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-db:/var/lib/postgresql/data
+    networks:
+      template_compose:
+        ipv4_address: 172.16.0.2
+
+  nginx:
+    container_name: nginx_template_compose
+    restart: always
+    image: nginx
+    volumes:
+    - ./nginx/templates:/etc/nginx/templates:ro
+    - ./nginx/ssl/sslbundle.crt:/etc/nginx/ssl/sslbundle.crt:ro
+    - ./nginx/ssl/sslbundle.key:/etc/nginx/ssl/sslbundle.key:ro
+    ports:
+    - 443:443
+    - 80:80
+    depends_on:
+      - web
+    links:
+      - web
+    networks:
+      template_compose:
+        ipv4_address: 172.16.0.3
+
+
+volumes:
+  postgres-db:
+    name: db_template_volume
