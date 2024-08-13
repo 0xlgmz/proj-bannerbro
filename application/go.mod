@@ -1,4 +1,4 @@
-module template
+module github.com/lgomez-dev/bannerbro
 
 go 1.22.4
 

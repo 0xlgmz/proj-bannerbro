@@ -1,8 +1,8 @@
 package main
 
 import (
-	"template/pkg/routes"
-	"template/pkg/utils"
+	"github.com/lgomez-dev/bannerbro/pkg/routes"
+	"github.com/lgomez-dev/bannerbro/pkg/utils"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/template/django/v3"

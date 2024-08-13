@@ -1,16 +1,16 @@
 networks:
-  template_compose:
+  bannerbro_compose:
     ipam:
       config:
         - subnet: "172.16.0.0/16"
           gateway: "172.16.0.254"
     driver: bridge
-    name: network_template_compose
+    name: network_bannerbro_compose
 
 services:
 
   web:
-    container_name: fullstack_template_compose
+    container_name: fullstack_bannerbro_compose
     env_file:
       - .env
     build:
@@ -26,11 +26,11 @@ services:
     links:
       - db
     networks:
-      template_compose:
+      bannerbro_compose:
         ipv4_address: 172.16.0.1
 
   db:
-    container_name: db_template_compose
+    container_name: db_bannerbro_compose
     image: postgres:alpine
     env_file:
       - .env
@@ -43,11 +43,11 @@ services:
     volumes:
       - postgres-db:/var/lib/postgresql/data
     networks:
-      template_compose:
+      bannerbro_compose:
         ipv4_address: 172.16.0.2
 
   nginx:
-    container_name: nginx_template_compose
+    container_name: nginx_bannerbro_compose
     restart: always
     image: nginx
     volumes:
@@ -62,10 +62,10 @@ services:
     links:
       - web
     networks:
-      template_compose:
+      bannerbro_compose:
         ipv4_address: 172.16.0.3
 
 
 volumes:
   postgres-db:
-    name: db_template_volume
+    name: db_bannerbro_volume
