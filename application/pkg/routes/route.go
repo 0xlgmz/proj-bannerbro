@@ -16,4 +16,5 @@ func utilRoutes(app *fiber.App) {
 
 func routeDefault(app *fiber.App) {
 	app.Get("/", handlers.HandleIndex)
+	app.Get("/banner/:social", handlers.HandleBanner)
 }
