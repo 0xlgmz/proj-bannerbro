@@ -23,7 +23,7 @@
 
 </head>
 
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex flex-column min-vh-100" data-bs-theme="dark">
 
         <header class="text-bg-dark">
                 <div>
@@ -46,7 +46,19 @@
                                         </ul>
 
                                         <ul class="nav justify-content-end">
-                                                <li class="nav-item dropdown">
+                                                <li class="nav-item">
+                                                        <a class="nav-link" href="#" role="button" aria-expanded="false">
+                                                                <button type="button" class="btn btn-primary position-relative" onclick="toggleTheme()">
+                                                                        <div id="theme-light" style="display: none;">
+                                                                                <i class="fa-regular fa-moon"></i>
+                                                                        </div>
+                                                                        <div id="theme-dark" style="display: none;">
+                                                                                <i class="fa-regular fa-sun"></i>
+                                                                        </div>
+                                                                </button>
+                                                        </a> 
+                                                </li>
+                                                <li class="nav-item">
                                                         <a class="nav-link" href="#" role="button" aria-expanded="false" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                                                         <button type="button" class="btn btn-primary position-relative">
                                                                 <i class="fas fa-bell"></i>
@@ -65,8 +77,8 @@
 
         <!-- Modal -->
         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"">
-                        <div class="modal-content">
+                <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable"">
+                        <div class="modal-content vh-100">
                                 <div class="modal-header">
                                         <h1 class="modal-title fs-5" id="staticBackdropLabel">Notification Center</h1>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -79,4 +91,15 @@
                                 </div>
                         </div>
                 </div>
+        </div>
+
+        <div class="position-absolute bottom-0 start-0">
+                <button type="button" class="btn btn-primary position-relative" onclick="toggleTheme()">
+                        <div id="theme-light" style="display: none;">
+                                <i class="fa-regular fa-moon"></i>
+                        </div>
+                        <div id="theme-dark" style="display: none;">
+                                <i class="fa-regular fa-sun"></i>
+                        </div>
+                </button>
         </div>
