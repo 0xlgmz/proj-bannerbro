@@ -47,7 +47,7 @@
 
                                         <ul class="nav justify-content-end">
                                                 <li class="nav-item dropdown">
-                                                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                                                        <a class="nav-link" href="#" role="button" aria-expanded="false" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                                                         <button type="button" class="btn btn-primary position-relative">
                                                                 <i class="fas fa-bell"></i>
                                                                 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
@@ -56,16 +56,27 @@
                                                                 </span>
                                                         </button>
                                                         </a>
-                                                        <ul class="dropdown-menu">
-                                                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                                                <li><hr class="dropdown-divider"></li>
-                                                                <li><a class="dropdown-item" href="#">Separated link</a></li>
-                                                        </ul>
                                                 </li>
                                         </ul>
                                 </div>
                         </nav>
                 </div>
         </header>  
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"">
+                        <div class="modal-content">
+                                <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Notification Center</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                        Hello
+                                </div>
+                                <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                </div>
+                        </div>
+                </div>
+        </div>
