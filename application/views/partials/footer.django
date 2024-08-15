@@ -46,7 +46,7 @@
       <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
     </div>
     <div class="toast-body">
-      Welcome traveler to the easiest site to generate quick and simple banners! <strong>Signup and get a free premium use code!</strong> 
+      Welcome traveler to the easiest site to generate quick and simple banners! <a href=""><strong>Signup and get a free premium use code!</strong></a>
     </div>
   </div>
 </div>

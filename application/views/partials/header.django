@@ -78,13 +78,24 @@
         <!-- Modal -->
         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable"">
-                        <div class="modal-content vh-100">
+                        <div class="modal-content">
                                 <div class="modal-header">
                                         <h1 class="modal-title fs-5" id="staticBackdropLabel">Notification Center</h1>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                        Hello
+                                        <div class="bg-body-tertiary p-5 rounded mt-3">
+                                                <h1 class="text-center">Get Free Code!</h1>
+                                                <p>
+                                                        Welcome traveler to the easiest site to generate quick and simple banners! <a href=""><strong>Signup and get a free premium use code!</strong></a>
+                                                </p>
+                                                <form class="" action="">
+                                                        <div class="input-group mb-3">
+                                                                <input type="text" class="form-control" placeholder="Enter valid email" aria-label="Recipient's email" aria-describedby="button-addon2">
+                                                                <button class="btn btn-outline-success" type="button" id="button-addon2">Grab Free Code!</button>
+                                                        </div>
+                                                </form>
+                                        </div>
                                 </div>
                                 <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
