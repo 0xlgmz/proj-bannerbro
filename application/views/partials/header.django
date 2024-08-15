@@ -92,14 +92,3 @@
                         </div>
                 </div>
         </div>
-
-        <div class="position-absolute bottom-0 start-0">
-                <button type="button" class="btn btn-primary position-relative" onclick="toggleTheme()">
-                        <div id="theme-light" style="display: none;">
-                                <i class="fa-regular fa-moon"></i>
-                        </div>
-                        <div id="theme-dark" style="display: none;">
-                                <i class="fa-regular fa-sun"></i>
-                        </div>
-                </button>
-        </div>

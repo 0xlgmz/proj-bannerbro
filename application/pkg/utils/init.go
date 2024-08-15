@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/lgomez-dev/bannerbro/pkg/models"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
@@ -22,5 +23,14 @@ func ConnectToDatabase() {
 }
 
 func SyncDB() {
-	DB.AutoMigrate()
+	DB.AutoMigrate(
+		&models.BannerAnalytics{},
+		&models.BannerClick{},
+		&models.BannerTypes{},
+		&models.Colors{},
+		&models.Fonts{},
+	)
+	// if DB.Migrator().HasTable(&models.BannerTypes{}) {
+	// 	bannerAnalytics := []models.
+	// }
 }

@@ -7,14 +7,14 @@
         <div class="text-center">
           <!-- <div class="row align-items-center"> -->
           <div class="row justify-content-md-center">
-            <div class="col-3 vh-100 border border-danger">
-              <h3>Templates</h3>
+            <div class="col-3 vh-100 border border">
+              <h3 class="mt-3 p-3 border">Templates</h3>
             </div>
-            <div class="col-6 vh-100 border border-danger">
-              <h3>Banner View</h3>
+            <div class="col-6 vh-100 border border">
+              <h3 class="mt-3 p-3 border">Banner View</h3>
             </div>
-            <div class="col-3 vh-100 border border-danger">
-              <h3>Settings</h3>
+            <div class="col-3 vh-100 border border">
+              <h3 class="mt-3 p-3 border">Settings</h3>
               <nav>
                 <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
                   <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Colours</button>

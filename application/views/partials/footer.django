@@ -30,10 +30,26 @@
       </div>
 
     <div class="d-flex flex-column flex-sm-row justify-content-between pt-4 pb-2 my-4 border-top">
-      <p>Ⓒ Year Company Name.</p>
+      <p>Ⓒ 2024 BannerBro.</p>
     </div>
   </div>
 </footer>
+
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+  <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <div class="rounded me-2">
+        <i class="fa-regular fa-star" style="color: #FFD43B;"></i>
+      </div>
+      <strong class="me-auto">Get Free Code!</strong>
+      <small>just now</small>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      Welcome traveler to the easiest site to generate quick and simple banners! <strong>Signup and get a free premium use code!</strong> 
+    </div>
+  </div>
+</div>
 
 <!-- Import of banner notifications -->
 <script src="https://unpkg.com/notie"></script>
@@ -50,6 +66,7 @@
         const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
         const initialTheme = systemPrefersDark ? "dark" : "light";
         document.body.setAttribute('data-bs-theme', initialTheme);
+        document.getElementById('liveToast').setAttribute('class', 'toast fade show')
     }
     updateThemeIcons(initialTheme);
   }
