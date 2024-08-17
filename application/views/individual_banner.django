@@ -2,103 +2,149 @@
 
 <div class="container-fluid">
 
-    <section class="vh-100">
-      <div>
-        <div class="text-center">
-          <!-- <div class="row align-items-center"> -->
-          <div class="row justify-content-md-center">
-            <div class="col-3 vh-100 border border">
-              <h3 class="mt-3 p-3 border">Templates</h3>
+  <section class="vh-100">
+    <div>
+      <div class="text-center">
+        <div class="row justify-content-md-center">
+          <div class="col-3 vh-100 border border">
+            <h3 class="mt-3 p-3 border">Templates</h3>
+  
+            <a class="text-decoration-none font-white" href="">
+              <div class="card text-white bg-danger mb-3">
+                <div class="card-header text-white">Hot Topic 🔥</div>
+                <div class="card-body">
+                  <h5 class="card-title text-white">Facebook</h5>
+                  <p class="card-text text-white">With loving support of the community it seems that this banner that has been most popular recently with over 1000 clicks!</p>
+                  <a class="border btn btn-lg btn-danger form-control mt-3" href="">take me now!</a>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-6 vh-100 border border">
+            <h3 class="mt-3 p-3 border">Banner View</h3>
+            <div class="bg-body-tertiary p-3 rounded mx-4 mt-4 text-start">
 
-              <a class="text-decoration-none font-white" href="">
-                <div class="card text-white bg-danger mb-3">
-                  <div class="card-header">Hot Topic 🔥</div>
-                  <div class="card-body">
-                    <h5 class="card-title">Facebook</h5>
-                    <p class="card-text">With loving support of the community it seems that this banner that has been most popular recently with over 1000 clicks!</p>
-                    <a class="btn btn-lg btn-primary form-control mt-3" href="">take me now!</a>
+              <div class="position-relative">
+                <!-- Width Label -->
+                <div class="position-absolute text-white" style="top: -25px; left: 50%; transform: translateX(-50%);">
+                  <span class="bg-dark px-2 rounded">851 px</span>
+                </div>
+                <!-- Height Label -->
+                <div class="position-absolute text-white" style="left: -50px; top: 50%; transform: translateY(-50%);">
+                  <span class="bg-dark px-2 rounded">315 px</span>
+                </div>
+                <div id="bannerPreview" class="p-4">
+                  <!-- Banner content will be dynamically generated here -->
+                </div>
+              </div>
+              
+            </div>
+          </div>
+
+          <div class="col-3 vh-100 border border">
+            <h3 class="mt-3 p-3 border">Settings</h3>
+            <nav>
+              <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
+                <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Colours</button>
+                <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Images</button>
+              </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+              <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
+  
+                <form id="bannerSettings">
+                  <div class="bg-body-tertiary p-3 rounded mt-3 text-start">
+                    <label for="bgColorInput" class="form-label">Background Color: </label>
+                    <input type="color" class="form-control w-100 form-control-color" name="banner-bg-color" id="bgColorInput" value="#563d7c" title="Choose your color">
+                  </div>
+  
+                  <div class="bg-body-tertiary p-3 rounded mt-1">
+                    <div class="row">
+                      <div class="col text-start">
+                        <label for="fontFamilyInput" class="form-label">Font Family</label>
+                        <select class="form-control form-select" name="banner-font-family" id="fontFamilyInput">
+                          <option value="Arial">Arial</option>
+                          <option value="Verdana">Verdana</option>
+                          <option value="Times New Roman">Times New Roman</option>
+                          <option value="Georgia">Georgia</option>
+                          <option value="'Roboto', sans-serif">Roboto</option>
+                          <option value="'Montserrat', sans-serif">Montserrat</option>
+                          <option value="'Lobster', cursive">Lobster</option>
+                          <option value="'Open Sans', sans-serif">Open Sans</option>
+                          <option value="'Poppins', sans-serif">Poppins</option>
+                          <option value="'Raleway', sans-serif">Raleway</option>
+                          <option value="'Lato', sans-serif">Lato</option>
+                          <option value="'Oswald', sans-serif">Oswald</option>
+                          <option value="'Merriweather', serif">Merriweather</option>
+                          <option value="'Playfair Display', serif">Playfair Display</option>
+                          <option value="'Source Sans Pro', sans-serif">Source Sans Pro</option>
+                          <option value="'Nunito', sans-serif">Nunito</option>
+                          <option value="'Work Sans', sans-serif">Work Sans</option>
+                          <option value="'Ubuntu', sans-serif">Ubuntu</option>
+                          <option value="'Quicksand', sans-serif">Quicksand</option>
+                          <option value="'Inconsolata', monospace">Inconsolata</option>
+                          <option value="'Cabin', sans-serif">Cabin</option>
+                          <option value="'Rubik', sans-serif">Rubik</option>
+                        </select>
+                      </div>
+                      <div class="col text-start">
+                        <label for="fontColorInput" class="form-label">Font Colour</label>
+                        <input type="color" class="form-control w-100 form-control-color" name="banner-font-color" id="fontColorInput" value="#000000" title="Choose your color">
+                      </div>
+                    </div>
+                  </div>
+  
+                  <div class="bg-body-tertiary p-3 rounded mt-1">
+                    <div class="row">
+                      <div class="col text-start">
+                        <label for="headerTextInput" class="form-label">Banner Heading</label>
+                        <input class="form-control" type="text" name="banner-header-text" id="headerTextInput" value="Fastest Banner Creation 🏃🏻" maxlength="50" placeholder="Banner Bro">
+                      </div>
+                    </div>
+                  </div>
+  
+                  <div class="bg-body-tertiary p-3 rounded mt-1">
+                    <div class="row">
+                      <div class="col text-start">
+                        <label for="subheaderTextInput" class="form-label">Banner Subheading</label>
+                        <input class="form-control" type="text" name="banner-subheader-text" id="subheaderTextInput" value="Generate with ease in just a few clicks." maxlength="70" placeholder="Banner Bro">
+                      </div>
+                    </div>
+                  </div>
+  
+                  <div class="bg-body-tertiary p-3 rounded mt-1">
+                    <div class="form-check form-switch">
+                      <input class="form-check-input" type="checkbox" role="switch" id="watermarkSwitch" checked>
+                      <label class="form-check-label" for="watermarkSwitch">Banner watermark? 🔒</label>
+                    </div>
+                  </div>
+                  
+                  <button type="button" class="btn btn-danger form-control mt-5" onclick="generateBanner()">🔥 Generate Banner 🔥</button>
+                </form>
+  
+              </div>
+              <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
+
+                <div class="bg-body-tertiary p-3 rounded mt-1">
+                  <div class="input-group">
+                    <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
                   </div>
                 </div>
-              </a>
 
-            </div>
-            <div class="col-6 vh-100 border border">
-              <h3 class="mt-3 p-3 border">Banner View</h3>
-            </div>
-            <div class="col-3 vh-100 border border">
-              <h3 class="mt-3 p-3 border">Settings</h3>
-              <nav>
-                <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
-                  <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Colours</button>
-                  <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Gradients</button>
-                  <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Images</button>
-                </div>
-              </nav>
-              <div class="tab-content" id="nav-tabContent">
-                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab" tabindex="0">
-
-                  <form action="">
-
-                    <div class="bg-body-tertiary p-3 rounded mt-3 text-start">
-                      <label for="exampleColorInput" class="form-label">Background Color: </label>
-                      <input type="color" class="form-control w-100 form-control-color" name="banner-bg-color" id="exampleColorInput" value="#563d7c" title="Choose your color">
-                    </div>
-
-                    <div class="bg-body-tertiary p-3 rounded mt-1">
-                      <div class="row">
-                        <div class="col text-start">
-                          <label for="exampleColorInput" class="form-label">Font Family</label>
-                          <select class="form-control" name="banner-font-family">
-                            <option value="">This</option>
-                            <option value="">That</option>
-                            <option value="">The</option>
-                            <option value="">Other</option>
-                          </select>
-                        </div>
-                        <div class="col text-start">
-                          <label for="exampleColorInput" class="form-label">Font Colour</label>
-                          <input type="color" class="form-control w-100 form-control-color"name="banner-font-color" id="exampleColorInput" value="#000000" title="Choose your color">
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="bg-body-tertiary p-3 rounded mt-1">
-                      <div class="row">
-                        <div class="col text-start">
-                          <label for="exampleColorInput" class="form-label">Banner Headering</label>
-                          <input class="form-control" type="text" name="banner-header-text" value="Fastest Banner Creation 🏃🏻" maxlength="50" placeholder="Banner Bro" id="">
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="bg-body-tertiary p-3 rounded mt-1">
-                      <div class="row">
-                        <div class="col text-start">
-                          <label for="exampleColorInput" class="form-label">Banner Subheadering</label>
-                          <input class="form-control" type="text" name="banner-subheader-text" value="Generate with ease in just a few clicks." maxlength="70" placeholder="Banner Bro" id="">
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="bg-body-tertiary p-3 rounded mt-1">
-                      <div class="form-check form-switch">
-                        <label class="form-control form-check-label" for="flexSwitchCheckChecked">Banner watermark?  🔒</label>
-                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
-                      </div>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary form-control">🔥 Generate Banner 🔥</button>
-                  </form>
+                <div class="bg-body-tertiary p-3 rounded mt-1">
 
                 </div>
-                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">...</div>
-                <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">...</div>
+
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
+    
+<script src="/static/banner.js"></script>
+
 
 </div>
 
