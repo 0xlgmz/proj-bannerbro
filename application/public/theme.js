@@ -35,6 +35,3 @@ function updateThemeIcons(color) {
 
 // Apply the initial theme on page load
 setInitialTheme();
-
-// Add event listener to the toggle button
-document.getElementById('themeToggleButton').addEventListener('click', toggleTheme);

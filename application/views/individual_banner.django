@@ -2,47 +2,59 @@
 
 <div class="container-fluid">
 
-  <section class="vh-100">
+  <section class="">
     <div>
       <div class="text-center">
-        <div class="row justify-content-md-center">
-          <div class="col-3 vh-100 border border">
-            <h3 class="mt-3 p-3 border">Templates</h3>
-  
-            <a class="text-decoration-none font-white" href="">
-              <div class="card text-white bg-danger mb-3">
-                <div class="card-header text-white">Hot Topic 🔥</div>
-                <div class="card-body">
-                  <h5 class="card-title text-white">Facebook</h5>
-                  <p class="card-text text-white">With loving support of the community it seems that this banner that has been most popular recently with over 1000 clicks!</p>
-                  <a class="border btn btn-lg btn-danger form-control mt-3" href="">take me now!</a>
-                </div>
-              </div>
-            </a>
+        <div class="row my-3 justify-content-md-center">
+          <div class="col-2">
+            <h3 class="mt-3 p-3">Other</h3>
+            <div class="overflow-auto">
+              {% for data in ClickData %}
+                <ol class="list-group list-group-numbered">
+                  <a class="text-decoration-none font-white" href="/banner/{{data.BannerName}}">
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                      <div class="ms-2 me-auto">
+                        <div class="fw-bold">{{ data.BannerName }}</div>
+                      </div>
+                      <span class="badge bg-primary rounded-pill">{{ data.ClickAmount }}</span>
+                    </li>
+                  </a>
+                </ol>
+              {% endfor %}
+            </div>
+
           </div>
-          <div class="col-6 vh-100 border border">
-            <h3 class="mt-3 p-3 border">Banner View</h3>
+
+        {% for banner in Banners %}
+          {% if banner.Type == social %}
+          <div class="col-7 vh-100">
+            <h3 class="mt-3 p-3 text-capitalize">{{banner.Type}} Banner View</h3>
+            <input type="text" hidden value="{{banner.Type}}" name="bannerTrueName" id="bannerTrueName">
             <div class="bg-body-tertiary p-3 rounded mx-4 mt-4 text-start">
 
               <div class="position-relative">
                 <!-- Width Label -->
                 <div class="position-absolute text-white" style="top: -25px; left: 50%; transform: translateX(-50%);">
-                  <span class="bg-dark px-2 rounded">851 px</span>
+                  <span class="bg-dark px-2 rounded">{{banner.Width}}</span>
+                  <input type="text" hidden value="{{banner.Width}}" name="bannerTrueWidth" id="bannerTrueWidth">
                 </div>
                 <!-- Height Label -->
                 <div class="position-absolute text-white" style="left: -50px; top: 50%; transform: translateY(-50%);">
-                  <span class="bg-dark px-2 rounded">315 px</span>
+                  <span class="bg-dark px-2 rounded">{{banner.Height}}</span>
+                  <input type="text" hidden value="{{banner.Height}}" name="bannerTrueHeight" id="bannerTrueHeight">
                 </div>
-                <div id="bannerPreview" class="p-4">
+                <div id="bannerPreview">
                   <!-- Banner content will be dynamically generated here -->
                 </div>
               </div>
               
             </div>
           </div>
+          {% endif %}
+        {% endfor %}
 
-          <div class="col-3 vh-100 border border">
-            <h3 class="mt-3 p-3 border">Settings</h3>
+          <div class="col-3">
+            <h3 class="mt-3 p-3">Settings</h3>
             <nav>
               <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
                 <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Colours</button>
@@ -89,7 +101,7 @@
                       </div>
                       <div class="col text-start">
                         <label for="fontColorInput" class="form-label">Font Colour</label>
-                        <input type="color" class="form-control w-100 form-control-color" name="banner-font-color" id="fontColorInput" value="#000000" title="Choose your color">
+                        <input type="color" class="form-control w-100 form-control-color" name="banner-font-color" id="fontColorInput" value="#FFFFFF" title="Choose your color">
                       </div>
                     </div>
                   </div>
@@ -97,7 +109,13 @@
                   <div class="bg-body-tertiary p-3 rounded mt-1">
                     <div class="row">
                       <div class="col text-start">
-                        <label for="headerTextInput" class="form-label">Banner Heading</label>
+                        <div class="d-flex justify-content-between">
+                          <label for="headerTextInput" class="form-label">Banner Heading</label>
+                          <div class="form-check form-switch">
+                            <label class="form-check-label" for="boldHeaderTextSwitch">Bold Text? </label>
+                            <input class="form-check-input" type="checkbox" role="switch" id="boldHeaderTextSwitch" checked>
+                          </div>
+                        </div>
                         <input class="form-control" type="text" name="banner-header-text" id="headerTextInput" value="Fastest Banner Creation 🏃🏻" maxlength="50" placeholder="Banner Bro">
                       </div>
                     </div>
@@ -106,7 +124,13 @@
                   <div class="bg-body-tertiary p-3 rounded mt-1">
                     <div class="row">
                       <div class="col text-start">
-                        <label for="subheaderTextInput" class="form-label">Banner Subheading</label>
+                        <div class="d-flex justify-content-between">
+                          <label for="subheaderTextInput" class="form-label">Banner Subheading</label>
+                          <div class="form-check form-switch">
+                            <label class="form-check-label" for="boldSubheaderTextSwitch">Bold Text? </label>
+                            <input class="form-check-input" type="checkbox" role="switch" id="boldSubheaderTextSwitch">
+                          </div>
+                        </div>
                         <input class="form-control" type="text" name="banner-subheader-text" id="subheaderTextInput" value="Generate with ease in just a few clicks." maxlength="70" placeholder="Banner Bro">
                       </div>
                     </div>
@@ -117,9 +141,12 @@
                       <input class="form-check-input" type="checkbox" role="switch" id="watermarkSwitch" checked>
                       <label class="form-check-label" for="watermarkSwitch">Banner watermark? 🔒</label>
                     </div>
+                    <div id="coffeeTooltip" style="display: none;">
+                      Consider buying me a coffee! ☕
+                    </div>
                   </div>
                   
-                  <button type="button" class="btn btn-danger form-control mt-5" onclick="generateBanner()">🔥 Generate Banner 🔥</button>
+                  <button type="button" id="downloadBanner" class="btn btn-warning form-control mt-5">🔥 Generate Banner 🔥</button>
                 </form>
   
               </div>
@@ -127,13 +154,15 @@
 
                 <div class="bg-body-tertiary p-3 rounded mt-1">
                   <div class="input-group">
-                    <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                    <label for="bgImageInput" class="form-label">Upload Background Image</label>
+                    <input type="file" class="form-control" id="bgImageInput" accept="image/*" aria-describedby="bgImageInput" aria-label="Upload">
+                    <button type="button" id="removeBgImage" class="btn btn-danger mt-2" style="display:none;">Remove Background Image</button>
                   </div>
                 </div>
 
-                <div class="bg-body-tertiary p-3 rounded mt-1">
+                <!-- <div class="bg-body-tertiary p-3 rounded mt-1">
 
-                </div>
+                </div> -->
 
               </div>
             </div>
@@ -144,7 +173,11 @@
   </section>
     
 <script src="/static/banner.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
 
+<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="lgomezdev" data-description="Support me on Buy me a coffee!" data-message="Thank you for stopping by! 😊I appreciate you taking the time to visit my site." data-color="#FF813F" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
 
 </div>
 

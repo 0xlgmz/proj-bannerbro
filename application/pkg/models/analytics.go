@@ -20,3 +20,9 @@ type BannerClick struct {
 	BannerAnalyticsID uint   // Foreign key to BannerAnalytics
 	Location          string // Location of the click
 }
+
+type BannerAnalyticsResult struct {
+	Index       int8
+	BannerName  string
+	ClickAmount uint
+}

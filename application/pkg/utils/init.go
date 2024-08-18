@@ -27,10 +27,17 @@ func SyncDB() {
 		&models.BannerAnalytics{},
 		&models.BannerClick{},
 		&models.BannerTypes{},
-		&models.Colors{},
-		&models.Fonts{},
+		&models.Images{},
 	)
-	// if DB.Migrator().HasTable(&models.BannerTypes{}) {
-	// 	bannerAnalytics := []models.
-	// }
+	if DB.Migrator().HasTable(&models.BannerTypes{}) {
+		bannerType := []models.BannerTypes{
+			{Type: "twitter", Width: uint(1500), Height: uint(500)},
+			{Type: "facebook", Width: uint(851), Height: uint(315)},
+			{Type: "youtube", Width: uint(2560), Height: uint(1440)},
+			{Type: "linkedin", Width: uint(1584), Height: uint(396)},
+		}
+		for _, bannerType := range bannerType {
+			DB.FirstOrCreate(&bannerType, bannerType)
+		}
+	}
 }

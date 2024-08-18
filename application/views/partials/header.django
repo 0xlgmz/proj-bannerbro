@@ -7,9 +7,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link rel="icon" type="image/png" href="/public/favicon-32x32.png" />
+        <link rel="icon" type="image/png" href="/static/favicon.png" />
         <link href="/static/style.css" rel="stylesheet">
 
+        <title>BannerBro | {{title}}</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
                 integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
                 crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -23,44 +24,37 @@
 
 </head>
 
+<div class="fixed-bottom">
+        <button type="button" style="width: 64px; height: 64px;" class="btn m-3 rounded-circle btn-warning position-relative" onclick="toggleTheme()">
+                <div id="theme-light" style="display: none;">
+                        <i style="max-width: 36px; height: auto;" class="fs-2 fa-regular fa-moon"></i>
+                </div>
+                <div id="theme-dark" style="display: none;">
+                        <i style="max-width: 36px; height: auto;" class="fs-2 fa-regular fa-sun"></i>
+                </div>
+        </button>
+</div>
+
 <body class="d-flex flex-column min-vh-100" data-bs-theme="dark">
 
         <header class="text-bg-dark">
                 <div>
-                        <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+                        <nav class="navbar bg-dark border-body" data-bs-theme="dark">
                                 <div class="container-fluid">
                                         <ul class="nav justify-content-start">
                                                 <li class="nav-item">
-                                                        <a id="tagline-nav" class="nav-link disabled" aria-disabled="true">
-                                                        <img src="https://yt3.googleusercontent.com/oO-sFenv1PiLt0-5zmd0Vq04MuWUPYuAWKkvTnChzZmc6IsN8TWy9gqum41cZ8nSG9wQJyG7VOo=s160-c-k-c0x00ffffff-no-rj"
-                                                                alt="Logo" width="32" height="32" id="circle-img"
-                                                                class="d-inline-block align-text-center"> BannerBro
+                                                        <a href="/" id="tagline-nav" class="pe-auto nav-link disabled" aria-disabled="true">
+                                                        <img src="/static/BBLogoHeader.png"
+                                                                alt="Logo" width="150"
+                                                                class="d-inline-block align-text-center">
                                                         </a>
-                                                </li>
-                                        </ul>
-                                        <ul class="nav justify-content-center">
-                                                <li class="nav-item">
-                                                        <a id="tagline-nav" class="nav-link disabled"
-                                                                aria-disabled="true">Build banners quick and easily in one swift motion!</a>
                                                 </li>
                                         </ul>
 
                                         <ul class="nav justify-content-end">
                                                 <li class="nav-item">
-                                                        <a class="nav-link" href="#" role="button" aria-expanded="false">
-                                                                <button type="button" class="btn btn-primary position-relative" onclick="toggleTheme()">
-                                                                        <div id="theme-light" style="display: none;">
-                                                                                <i class="fa-regular fa-moon"></i>
-                                                                        </div>
-                                                                        <div id="theme-dark" style="display: none;">
-                                                                                <i class="fa-regular fa-sun"></i>
-                                                                        </div>
-                                                                </button>
-                                                        </a> 
-                                                </li>
-                                                <li class="nav-item">
-                                                        <a class="nav-link" href="#" role="button" aria-expanded="false" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                                        <button type="button" class="btn btn-primary position-relative">
+                                                        <a id="btn-orange" style="display: none;" class="nav-link" href="#" role="button" aria-expanded="false" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                                        <button type="button" class="btn btn-warning position-relative">
                                                                 <i class="fas fa-bell"></i>
                                                                 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                                                                   1

@@ -58,3 +58,23 @@ func addBannerClickData(analyticsID uint, location string) error {
 	}
 	return utils.DB.Create(&click).Error
 }
+
+func GetBannerAnalyticsOrderedByClicks() ([]models.BannerAnalyticsResult, error) {
+	var results []models.BannerAnalyticsResult
+
+	// Query to get BannerAnalytics ordered by ClickAmount
+	err := utils.DB.Model(&models.BannerAnalytics{}).
+		Select("banner_name, click_amount").
+		Order("click_amount DESC").
+		Scan(&results).Error
+
+	if err != nil {
+		return nil, err
+	}
+
+	for i := range results {
+		results[i].Index = int8(i)
+	}
+
+	return results, nil
+}
