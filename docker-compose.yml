@@ -48,8 +48,8 @@ services:
     image: nginx
     volumes:
     - ./nginx/templates:/etc/nginx/templates:ro
-    - ./nginx/ssl/sslbundle.crt:/etc/nginx/ssl/sslbundle.crt:ro
-    - ./nginx/ssl/sslbundle.key:/etc/nginx/ssl/sslbundle.key:ro
+    - ./nginx/ssl/sslbundle.crt:/etc/ssl/sslbundle.crt:ro
+    - ./nginx/ssl/sslbundle.key:/etc/ssl/sslbundle.key:ro
     ports:
     - 443:443
     - 80:80
