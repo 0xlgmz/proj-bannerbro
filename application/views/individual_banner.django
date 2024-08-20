@@ -142,11 +142,9 @@
                       <label class="form-check-label" for="watermarkSwitch">Banner watermark? 🔒</label>
                     </div>
                     <div id="coffeeTooltip" style="display: none;">
-                      Consider buying me a coffee! ☕
+                      Consider buying me a Pizza slice
                     </div>
                   </div>
-                  
-                  <button type="button" id="downloadBanner" class="btn btn-warning form-control mt-5">🔥 Generate Banner 🔥</button>
                 </form>
   
               </div>
@@ -160,12 +158,21 @@
                   </div>
                 </div>
 
-                <!-- <div class="bg-body-tertiary p-3 rounded mt-1">
+                <div id="imagePositionControls" style="display:none;" class="bg-body-tertiary p-3 rounded mt-1">
+                    <label for="bgImagePosX" class="form-label">Background Position X</label>
+                    <input type="range" class="form-range" id="bgImagePosX" min="0" max="100" value="50">
+                    
+                    <label for="bgImagePosY" class="form-label">Background Position Y</label>
+                    <input type="range" class="form-range" id="bgImagePosY" min="0" max="100" value="50">
 
-                </div> -->
+                    <label for="bgImageSize" class="form-label">Background Image Size</label>
+                    <input type="range" class="form-range" id="bgImageSize" min="10" max="200" value="100">
+                </div>
 
               </div>
             </div>
+
+            <button type="button" id="downloadBanner" class="btn btn-warning form-control mt-5">🔥 Generate Banner 🔥</button>
           </div>
         </div>
       </div>

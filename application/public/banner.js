@@ -1,23 +1,25 @@
 let backgroundImageUrl = ''; // Global variable to store the background image URL
 
 document.getElementById('bgImageInput').addEventListener('change', function(event) {
-    const file = event.target.files[0];
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            backgroundImageUrl = e.target.result; // Store the base64 URL of the image
-            document.getElementById('removeBgImage').style.display = 'inline-block'; // Show remove button
-            updateBanner(); // Update the banner with the new image
-        };
-        reader.readAsDataURL(file); // Convert the file to a base64 URL
-    }
+  const file = event.target.files[0];
+  if (file) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+          backgroundImageUrl = e.target.result; // Store the base64 URL of the image
+          document.getElementById('removeBgImage').style.display = 'inline-block'; // Show remove button
+          document.getElementById('imagePositionControls').style.display = 'block'; // Show position controls
+          updateBanner(); // Update the banner with the new image
+      };
+      reader.readAsDataURL(file); // Convert the file to a base64 URL
+  }
 });
 
 document.getElementById('removeBgImage').addEventListener('click', function() {
-    backgroundImageUrl = ''; // Clear the background image URL
-    document.getElementById('bgImageInput').value = ''; // Reset the file input
-    document.getElementById('removeBgImage').style.display = 'none'; // Hide remove button
-    updateBanner(); // Update the banner without the image
+  backgroundImageUrl = ''; // Clear the background image URL
+  document.getElementById('bgImageInput').value = ''; // Reset the file input
+  document.getElementById('removeBgImage').style.display = 'none'; // Hide remove button
+  document.getElementById('imagePositionControls').style.display = 'none'; // Hide position controls
+  updateBanner(); // Update the banner without the image
 });
 
 // Event listeners for form fields
@@ -29,6 +31,9 @@ document.getElementById('subheaderTextInput').addEventListener('input', updateBa
 document.getElementById('watermarkSwitch').addEventListener('change', updateBanner);
 document.getElementById('boldHeaderTextSwitch').addEventListener('change', updateBanner);
 document.getElementById('boldSubheaderTextSwitch').addEventListener('change', updateBanner);
+document.getElementById('bgImagePosX').addEventListener('input', updateBanner);
+document.getElementById('bgImagePosY').addEventListener('input', updateBanner);
+document.getElementById('bgImageSize').addEventListener('input', updateBanner);
 
 function generateBanner() {
   // This function can be called when needed but isn't required for live updates
@@ -58,10 +63,14 @@ function updateBanner() {
   // Determine background style
   const backgroundStyle = backgroundImageUrl ? `url(${backgroundImageUrl})` : bgColor;
 
+  const backgroundPositionX = document.getElementById('bgImagePosX').value + '%';
+  const backgroundPositionY = document.getElementById('bgImagePosY').value + '%';
+  const backgroundSize = document.getElementById('bgImageSize').value + '%'; // Background size in %
+
 
   // Update banner preview
   bannerPreview.innerHTML = `
-    <div id="bannerPreviewBody" style="background: ${backgroundStyle}; font-family: ${fontFamily}; color: ${fontColor}; padding: 20px; text-align: center; position: relative; width: 100%; max-width: 100%; height: 0; padding-bottom: ${ratio*100}%;">
+    <div id="bannerPreviewBody" style="background: ${backgroundStyle}; background-size: ${backgroundSize}; background-position: ${backgroundPositionX} ${backgroundPositionY}; font-family: ${fontFamily}; color: ${fontColor}; padding: 20px; text-align: center; position: relative; width: 100%; max-width: 100%; height: 0; padding-bottom: ${ratio*100}%;">
       <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; align-items: center;">
         <h1 style="font-size: xxx-large; margin: 0; font-weight: ${headerFontWeight};">${headerText}</h1>
         <p style="font-size: large; margin: 0; font-weight: ${subheaderFontWeight};">${subheaderText}</p>

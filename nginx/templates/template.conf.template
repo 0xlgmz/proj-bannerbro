@@ -1,16 +1,15 @@
 server {
-
-    # SSL configuration
-
-#    listen 443 ssl;
-#    listen [::]:443;
     listen 80;
     listen [::]:80;
+    server_name bannerbro.com www.bannerbro.com;
+    return 302 https://$server_name$request_uri;
+}
 
-#    ssl_certificate /etc/ssl/sslbundle.crt;
-#    ssl_certificate_key /etc/ssl/sslbundle.key;
+server {
+    listen 443 ssl;
+    listen [::]:443;
 
-    server_name localhost _ ;
+    server_name bannerbro.com www.bannerbro.com;
     client_max_body_size 100M;
 
     location / {
