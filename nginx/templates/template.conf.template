@@ -6,8 +6,11 @@ server {
 }
 
 server {
-    listen 443;
+    listen 443 ssl;
     listen [::]:443;
+
+    ssl_certificate /etc/ssl/sslbundle.crt;
+    ssl_certificate_key /etc/ssl/sslbundle.key;
 
     server_name www.bannerbro.com bannerbro.com;
 
