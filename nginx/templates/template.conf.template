@@ -1,7 +1,7 @@
 server {
     listen 80;
     listen [::]:80;
-    server_name bannerbro.com www.bannerbro.com;
+    server_name www.bannerbro.com;
     return 302 https://$server_name$request_uri;
 }
 
@@ -9,7 +9,7 @@ server {
     listen 443;
     listen [::]:443;
 
-    server_name bannerbro.com www.bannerbro.com;
+    server_name www.bannerbro.com;
     client_max_body_size 100M;
 
     location / {
