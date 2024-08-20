@@ -17,8 +17,6 @@ services:
       .
     depends_on:
       - db
-    ports:
-      - "3000:3000"
     volumes:
       - ./application:/usr/src/app
       - ./application/public:/usr/src/app/public
@@ -38,8 +36,6 @@ services:
       - POSTGRES_USER=${DB_USER}
       - POSTGRES_PASSWORD=${DB_PASSWD}
       - POSTGRES_DB=${DB_NAME}
-    ports:
-      - "5432:5432"
     volumes:
       - postgres-db:/var/lib/postgresql/data
     networks:
@@ -56,7 +52,6 @@ services:
     - ./nginx/ssl/sslbundle.key:/etc/nginx/ssl/sslbundle.key:ro
     ports:
     - 443:443
-    - 80:80
     depends_on:
       - web
     links:
