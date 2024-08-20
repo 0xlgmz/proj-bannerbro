@@ -10,7 +10,6 @@ server {
     listen [::]:443;
 
     server_name www.bannerbro.com;
-    client_max_body_size 100M;
 
     location / {
         proxy_pass http://172.16.0.1:3000;
