@@ -8,7 +8,6 @@ function setInitialTheme() {
       const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
       const initialTheme = systemPrefersDark ? "dark" : "light";
       document.body.setAttribute('data-bs-theme', initialTheme);
-      document.getElementById('liveToast').setAttribute('class', 'toast fade show')
   }
   updateThemeIcons(initialTheme);
 }

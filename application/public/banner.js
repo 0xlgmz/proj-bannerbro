@@ -66,14 +66,24 @@ function updateBanner() {
   const backgroundPositionX = document.getElementById('bgImagePosX').value + '%';
   const backgroundPositionY = document.getElementById('bgImagePosY').value + '%';
   const backgroundSize = document.getElementById('bgImageSize').value + '%'; // Background size in %
+  let setFontHeader;
+  let setFontSubheader;
 
+
+  if (window.screen.width <= 1000){
+    setFontHeader = 'medium';
+    setFontSubheader = 'small';
+  } else {
+    setFontHeader = 'xxx-large';
+    setFontSubheader = 'large';
+  }
 
   // Update banner preview
   bannerPreview.innerHTML = `
     <div id="bannerPreviewBody" style="background: ${backgroundStyle}; background-size: ${backgroundSize}; background-position: ${backgroundPositionX} ${backgroundPositionY}; font-family: ${fontFamily}; color: ${fontColor}; padding: 20px; text-align: center; position: relative; width: 100%; max-width: 100%; height: 0; padding-bottom: ${ratio*100}%;">
       <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-        <h1 id="isBannerHeader" style="font-size: xxx-large; margin: 0; font-weight: ${headerFontWeight};">${headerText}</h1>
-        <p id="isBannerSub" style="font-size: large; margin: 0; font-weight: ${subheaderFontWeight};">${subheaderText}</p>
+        <h1 id="isBannerHeader" style="font-size: ${setFontHeader}; margin: 0; font-weight: ${headerFontWeight};">${headerText}</h1>
+        <p id="isBannerSub" style="font-size: ${setFontSubheader}; margin: 0; font-weight: ${subheaderFontWeight};">${subheaderText}</p>
         ${showWatermark ? '<div style="position: absolute; font-size: small; top: 10px; left: 10px; background: rgba(255, 255, 255, 0.2); padding: 4px 10px; border-radius: 20px;">banner generated with bannerbro.com</div>' : ''}
       </div>
     </div>
@@ -131,9 +141,9 @@ function cloneAndScaleBanner(originalWidth, originalHeight) {
   const innerDiv = clonedBanner.querySelector('div > div');
   innerDiv.style.padding = `${20 * scaleFactor}px`; // Scale padding
   const h1 = innerDiv.querySelector('h1');
-  h1.style.fontSize = `${scaleFactor * 5}em`; // Automatically scale font size
+  h1.style.fontSize = `${scaleFactor * 6}em`; // Automatically scale font size
   const p = innerDiv.querySelector('p');
-  p.style.fontSize = `${scaleFactor * 2.5}em`; // Automatically scale font size
+  p.style.fontSize = `${scaleFactor * 3}em`; // Automatically scale font size
 
   // Handle watermark font size if present
   const watermark = innerDiv.querySelector('div[style*="font-size: small;"]');
