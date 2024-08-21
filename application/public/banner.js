@@ -72,8 +72,8 @@ function updateBanner() {
   bannerPreview.innerHTML = `
     <div id="bannerPreviewBody" style="background: ${backgroundStyle}; background-size: ${backgroundSize}; background-position: ${backgroundPositionX} ${backgroundPositionY}; font-family: ${fontFamily}; color: ${fontColor}; padding: 20px; text-align: center; position: relative; width: 100%; max-width: 100%; height: 0; padding-bottom: ${ratio*100}%;">
       <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; padding: 20px; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-        <h1 style="font-size: xxx-large; margin: 0; font-weight: ${headerFontWeight};">${headerText}</h1>
-        <p style="font-size: large; margin: 0; font-weight: ${subheaderFontWeight};">${subheaderText}</p>
+        <h1 id="isBannerHeader" style="font-size: xxx-large; margin: 0; font-weight: ${headerFontWeight};">${headerText}</h1>
+        <p id="isBannerSub" style="font-size: large; margin: 0; font-weight: ${subheaderFontWeight};">${subheaderText}</p>
         ${showWatermark ? '<div style="position: absolute; font-size: small; top: 10px; left: 10px; background: rgba(255, 255, 255, 0.2); padding: 4px 10px; border-radius: 20px;">banner generated with bannerbro.com</div>' : ''}
       </div>
     </div>
