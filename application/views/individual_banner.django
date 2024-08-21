@@ -2,11 +2,11 @@
 
 <div class="container-fluid">
 
-  <section class="">
+  <section id="content" class="">
     <div>
       <div class="text-center">
-        <div class="row my-3 justify-content-md-center">
-          <div class="col-2">
+        <div id="rowHeaderAll" class="row my-3 justify-content-md-center">
+          <div id="isTemplates" class="col-2">
             <h3 class="mt-3 p-3">Other</h3>
             <div class="overflow-auto">
               {% for data in ClickData %}
@@ -27,7 +27,7 @@
 
         {% for banner in Banners %}
           {% if banner.Type == social %}
-          <div class="col-7 vh-100">
+          <div id="isBanners" class="col-7 vh-100">
             <h3 class="mt-3 p-3 text-capitalize">{{banner.Type}} Banner View</h3>
             <input type="text" hidden value="{{banner.Type}}" name="bannerTrueName" id="bannerTrueName">
             <div class="bg-body-tertiary p-3 rounded mx-4 mt-4 text-start">
@@ -53,7 +53,7 @@
           {% endif %}
         {% endfor %}
 
-          <div class="col-3">
+          <div id="isSettings" class="col-3">
             <h3 class="mt-3 p-3">Settings</h3>
             <nav>
               <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
@@ -180,6 +180,7 @@
   </section>
     
 <script src="/static/banner.js"></script>
+<script src="/static/responsive.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>

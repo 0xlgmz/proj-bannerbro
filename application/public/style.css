@@ -48,3 +48,29 @@ body {
     border-radius: 5px;
     font-size: 12px;
 }
+
+#desktop-content {
+    display: none;
+}
+
+#mobile-content {
+    display: none;
+}
+
+@media (min-width: 1000px) {
+    #desktop-content {
+        display: block;
+    }
+    #mobile-content {
+        display: none;
+    }
+}
+
+@media (max-width: 999px) {
+    #desktop-content {
+        display: none;
+    }
+    #mobile-content {
+        display: block;
+    }
+}

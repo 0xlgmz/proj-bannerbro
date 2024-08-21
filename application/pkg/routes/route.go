@@ -12,6 +12,8 @@ func Setup(app *fiber.App) {
 
 func utilRoutes(app *fiber.App) {
 	app.Static("/static", "./public")
+	app.Get("/banner/:social/desktop-content", handlers.DesktopContentHandler)
+	app.Get("/banner/:social/mobile-content", handlers.MobileContentHandler)
 }
 
 func routeDefault(app *fiber.App) {
