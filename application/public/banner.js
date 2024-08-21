@@ -131,9 +131,9 @@ function cloneAndScaleBanner(originalWidth, originalHeight) {
   const innerDiv = clonedBanner.querySelector('div > div');
   innerDiv.style.padding = `${20 * scaleFactor}px`; // Scale padding
   const h1 = innerDiv.querySelector('h1');
-  h1.style.fontSize = `${scaleFactor * 6}em`; // Automatically scale font size
+  h1.style.fontSize = `${scaleFactor * 5}em`; // Automatically scale font size
   const p = innerDiv.querySelector('p');
-  p.style.fontSize = `${scaleFactor * 3}em`; // Automatically scale font size
+  p.style.fontSize = `${scaleFactor * 2.5}em`; // Automatically scale font size
 
   // Handle watermark font size if present
   const watermark = innerDiv.querySelector('div[style*="font-size: small;"]');
