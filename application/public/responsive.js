@@ -1,3 +1,7 @@
+document.addEventListener("DOMContentLoaded", (event) => {
+    loadContent();
+  });
+
 function loadContent() {
     var screenWidth = window.screen.width;
 
@@ -26,4 +30,4 @@ function loadContent() {
     }
 }
 
-window.onresize = loadContent
+window.onresize = loadContent();
